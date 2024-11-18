@@ -15,6 +15,12 @@
             <Button Content="Oblicz netto" Click="CalculateNetto_Click" Margin="5"/>
         </StackPanel>
 
+        <StackPanel Orientation="Horizontal" Margin="400, 5, 0, 0">
+            <Label Content="Wybierz stawke: " VerticalAlignment="Center" Margin="10.0"></Label> 
+            <RadioButton x:Name="stawk8_5" Content="8,5%" GroupName="Podatek" IsChecked="True" Margin="13.0"></RadioButton>
+            <RadioButton x:Name="stawk19" Content="19%" GroupName="Podatek" Margin="13.0"></RadioButton>
+        </StackPanel>
+
 
         <Grid Grid.Row="1" Margin="10">
             <Grid.ColumnDefinitions>
