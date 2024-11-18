@@ -1,0 +1,44 @@
+﻿<Window x:Class="WpfApp2.CalculatorWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Kalkulator Podatku Dochodowego" Height="450" Width="800">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Left" Margin="26,10,0,10">
+            <Label Content="Pensja brutto:" Width="105"/>
+            <TextBox x:Name="BruttoInput" Width="150" Margin="5"/>
+            <Button Content="Oblicz netto" Click="CalculateNetto_Click" Margin="5"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Margin="400, 5, 0, 0">
+            <Label Content="Wybierz stawke: " VerticalAlignment="Center" Margin="10.0"></Label>
+            <RadioButton x:Name="stawk8_5" Content="8,5%" GroupName="Podatek" IsChecked="True" Margin="13.0"></RadioButton>
+            <RadioButton x:Name="stawk19" Content="19%" GroupName="Podatek" Margin="13.0"></RadioButton>
+        </StackPanel>
+
+
+        <Grid Grid.Row="1" Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+
+            <StackPanel Grid.Column="0" Margin="10">
+                <Label Content="Lista brutto:" FontWeight="Bold"/>
+                <ListBox x:Name="BruttoList"/>
+            </StackPanel>
+
+
+            <StackPanel Grid.Column="1" Margin="10">
+                <Label Content="Lista netto:" FontWeight="Bold"/>
+                <ListBox x:Name="NettoList"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>
