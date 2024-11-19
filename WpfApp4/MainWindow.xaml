@@ -1,0 +1,49 @@
+﻿<Window x:Class="VCLApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="VCL na ustawieniach minimalnych" Height="600" Width="800">
+    <Grid>
+      
+        <Menu VerticalAlignment="Top">
+            <MenuItem Header="Plik">
+                <MenuItem Header="Otwórz" Click="OpenFile_Click"/>
+                <Separator/>
+                <MenuItem Header="Zamknij" Click="CloseApp_Click"/>
+            </MenuItem>
+            <MenuItem Header="Widok">
+                <MenuItem Header="Pełny ekran" Click="ToggleFullScreen_Click"/>
+                <MenuItem Header="Minimalizowany ekran" Click="ToggleFullScreen_Click"/>
+            </MenuItem>
+        </Menu>
+
+        
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="10,30,0,0">
+            <RadioButton x:Name="RadioMusic" Content="Muzyka" IsChecked="True" GroupName="MediaType" Margin="10"/>
+            <RadioButton x:Name="RadioVideo" Content="Wideo" GroupName="MediaType" Margin="10"/>
+        </StackPanel>
+
+      
+        <Grid Margin="0,70,0,120">
+            <MediaElement x:Name="MediaViewer" LoadedBehavior="Manual" UnloadedBehavior="Stop" Stretch="Uniform" Margin="0,0,0,45"/>
+            
+            <TextBlock x:Name="MusicName" Text="Jeszcze nie załadowałeś muzyki" Visibility="Collapsed" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,10,0,0" FontSize="16" FontWeight="Bold" Foreground="Black"/>
+        </Grid>
+
+       
+        <StackPanel Orientation="Vertical" VerticalAlignment="Bottom" Margin="10">
+            <Slider x:Name="MediaSlider" Minimum="0" Maximum="1" Value="0" Height="30" ValueChanged="MediaSlider_ValueChanged"/>
+            <TextBlock x:Name="CurrentTimeText" Text="00:00 / 00:00" HorizontalAlignment="Center" Margin="5"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
+              
+                <Button Content="⏪" Click="Rewind5Seconds_Click" Width="35" Height="30" Margin="5"/>
+                <Button Content="⏩" Click="FastForward5Seconds_Click" Width="35" Height="30" Margin="5"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
+             
+                <Button Content="Odtwórz" Click="PlayMedia_Click" Width="75" Margin="5"/>
+                <Button Content="Pauza" Click="PauseMedia_Click" Width="75" Margin="5"/>
+                <Button Content="Reset" Click="StopMedia_Click" Width="75" Margin="5"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

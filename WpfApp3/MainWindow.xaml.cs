@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Media.Imaging;
 
-namespace PhotoGallery
+namespace Galeria
 {
     public partial class MainWindow : Window
     {
